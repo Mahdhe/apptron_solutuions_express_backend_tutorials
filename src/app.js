@@ -8,9 +8,9 @@ const trainerRoutes = require("./routes/trainer.routes")
 
 
 app.use("/api/students", studentRoutes);    
-app.use("/api/course", courseRoutes);    
-app.use("/api/task", taskRoutes);    
-app.use("/api/trainer", trainerRoutes);    
+app.use("/api/courses", courseRoutes);    
+app.use("/api/tasks", taskRoutes);    
+app.use("/api/trainers", trainerRoutes);    
 
 
 module.exports = app;

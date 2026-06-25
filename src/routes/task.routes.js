@@ -1,10 +1,8 @@
 const express = require("express");
 const router = express.Router();
+const { getTask, addTask } = require("../controllers/task.controller");
 
-router.get("/", (req, res) => {
-  res.json({
-    message: "Task Route Working"
-  });
-});
+router.get("/", getTask);
+router.post("/", addTask);
 
 module.exports = router;

@@ -1,10 +1,8 @@
 const express = require("express");
 const router = express.Router();
+const { getStudent, addStudent } = require("../controllers/student.controller");
 
-router.get("/", (req, res) => {
- res.json({
-   message: "Student Route Working"
- });
-});
+router.get("/", getStudent);
+router.post("/", addStudent);
 
 module.exports = router;
