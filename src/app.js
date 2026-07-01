@@ -11,7 +11,10 @@ const taskRoutes = require("./routes/task.routes");
 const trainerRoutes = require("./routes/trainer.routes");
 
 
+app.use(express.json());
 app.use(logger);
+
+
 app.use("/api/students", studentRoutes);    
 app.use("/api/courses", courseRoutes);    
 app.use("/api/tasks", taskRoutes);    
