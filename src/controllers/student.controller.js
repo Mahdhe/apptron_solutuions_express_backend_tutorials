@@ -3,12 +3,39 @@ const Student = require("../models/student.model");
 const getStudents = async (req, res) => {
   try {
     const students = await Student.find();
-    res.json({ successs : true, students });
+    res.status(200).json({
+      success: true,
+      total: students.length,
+      students,
+    });
   } catch (error) {
-    res.status(500).json({ success : false, message: error.message });
+    res.status(500).json({ success: false, message: error.message });
   }
 };
 
+// GET student by ID
+const getStudentById = async (req, res) => {
+  try {
+    const student = await Student.findById(req.params.id);
+
+    if (!student) {
+      return res.status(404).json({
+        success: false,
+        message: "Student not found",
+      });
+    }
+
+    res.status(200).json({
+      success: true,
+      student,
+    });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
+
+
+// POST student
 const addStudent = async (req, res) => {
   try {
     const {name, email, phone, course,age} = req.body;
@@ -48,4 +75,4 @@ const addStudent = async (req, res) => {
   }
 };
 
-module.exports = { getStudents, addStudent };
+module.exports = { getStudents, getStudentById, addStudent };
