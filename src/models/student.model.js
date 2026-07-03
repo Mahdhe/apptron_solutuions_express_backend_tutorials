@@ -26,6 +26,7 @@ const studentSchema = new mongoose.Schema  ({
     age : {
         type : Number,
         required : true,
+        min : [18, "Age must be greater than or equal to 18"],
     },
 
     status : {
