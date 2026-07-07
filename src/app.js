@@ -10,6 +10,7 @@ const studentRoutes = require("./routes/student.routes");
 const courseRoutes = require("./routes/course.routes");
 const taskRoutes = require("./routes/task.routes");
 const trainerRoutes = require("./routes/trainer.routes");
+const userRoutes = require("./routes/user.routes");
 
 
 app.use(jsonParser);
@@ -19,7 +20,8 @@ app.use(logger);
 app.use("/api/students", studentRoutes);    
 app.use("/api/courses", courseRoutes);    
 app.use("/api/tasks", taskRoutes);    
-app.use("/api/trainers", trainerRoutes);    
+app.use("/api/trainers", trainerRoutes);  
+app.use("/api/users", userRoutes);  
 app.use(errorHandler);
 
 module.exports = app;
