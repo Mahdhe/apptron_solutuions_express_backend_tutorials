@@ -25,10 +25,10 @@ const registerUser = async (req,res) => {
         }
 
         //check role is valid
-        if(!["Admin","Student"].includes(role)){
+        if(!["Admin","Trainer","Student"].includes(role)){
             return res.status(400).json({
                 success : false,
-                message : "Role must be either Admin or Student",
+                message : "Role must be either Admin,Trainer or Student",
             });
         }
 
