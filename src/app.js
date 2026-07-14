@@ -14,7 +14,7 @@ const taskRoutes = require("./routes/task.routes");
 const trainerRoutes = require("./routes/trainer.routes");
 const userRoutes = require("./routes/user.routes");
 const authRoutes =require("./routes/auth.routes");
-
+const attendanceRoutes = require("./routes/attendance.routes");
 
 app.use(jsonParser);
 app.use(logger);
@@ -26,6 +26,7 @@ app.use("/api/tasks", taskRoutes);
 app.use("/api/trainers", trainerRoutes);  
 app.use("/api/users", userRoutes);  
 app.use("/api/auth",authRoutes);
+app.use("/api/attendance", attendanceRoutes);
 
 
 app.use(errorHandler);
