@@ -14,7 +14,7 @@ const taskSchema = new mongoose.Schema({
 
     assignedTo : {
         type : mongoose.Schema.Types.ObjectId,
-        ref : "Stuednt",
+        ref : "Student",
         required : true,
     },
 
@@ -31,7 +31,7 @@ const taskSchema = new mongoose.Schema({
 
     status : {
         type : String,
-        enum : ["Pendeing","In progress","Completed"],
+        enum : ["Pending", "In Progress", "Completed"],
         default : "Pending",
     }
 
