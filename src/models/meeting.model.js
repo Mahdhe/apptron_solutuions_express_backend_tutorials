@@ -27,13 +27,14 @@ const meetingSchema = new mongoose.Schema (
 
         meetingType : {
             type : String,
-            enum : [Online,Offline],
+            enum : ["Online","Offline"],
             required : true,
         },
 
         meetingLink : {
             type : String,
             required : true,
+            default: null,
         },
 
         status : {
