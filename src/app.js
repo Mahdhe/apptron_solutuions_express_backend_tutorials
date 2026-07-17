@@ -16,6 +16,7 @@ const userRoutes = require("./routes/user.routes");
 const authRoutes =require("./routes/auth.routes");
 const attendanceRoutes = require("./routes/attendance.routes");
 const meetingRoutes = require("./routes/meeting.routes");
+const dashboardRoutes = require("./routes/dashboard.routes");
 
 app.use(jsonParser);
 app.use(logger);
@@ -29,6 +30,7 @@ app.use("/api/users", userRoutes);
 app.use("/api/auth",authRoutes);
 app.use("/api/attendance", attendanceRoutes);
 app.use("/api/meetings", meetingRoutes);
+app.use("/api/dashboard", dashboardRoutes);
 
 app.use(errorHandler);
 
